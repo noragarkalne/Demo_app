@@ -1,0 +1,215 @@
+/* Forest Color Scheme Variables */
+:host {
+  --forest-dark-green: #1a3b1a;
+  --forest-medium-green: #2d5a2d;
+  --forest-light-green: #4a7c4a;
+  --forest-accent-green: #6faf6f;
+  --forest-sage: #8fb38f;
+  --forest-mint: #a8d3a8;
+  --forest-background: #f5f8f5;
+  --forest-white: #ffffff;
+  --forest-error: #b85450;
+  --forest-warning: #c7932b;
+  --shadow-soft: rgba(26, 59, 26, 0.1);
+  --shadow-medium: rgba(26, 59, 26, 0.15);
+  --shadow-strong: rgba(26, 59, 26, 0.25);
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--forest-background) 0%,
+    var(--forest-mint) 100%
+  );
+  padding: 20px;
+}
+
+.login-card {
+  background: var(--forest-white);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--shadow-medium);
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid var(--forest-mint);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-header h1 {
+  color: var(--forest-dark-green);
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.login-header p {
+  color: var(--forest-medium-green);
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: var(--forest-dark-green);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--forest-sage);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: var(--forest-white);
+  color: var(--forest-dark-green);
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--forest-accent-green);
+  box-shadow: 0 0 0 3px rgba(111, 175, 111, 0.2);
+}
+
+.form-input::placeholder {
+  color: var(--forest-sage);
+  opacity: 0.7;
+}
+
+.form-input.error {
+  border-color: var(--forest-error);
+  box-shadow: 0 0 0 3px rgba(184, 84, 80, 0.1);
+}
+
+.error-message {
+  color: var(--forest-error);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.form-actions {
+  margin-top: 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--forest-medium-green) 0%,
+    var(--forest-light-green) 100%
+  );
+  color: var(--forest-white);
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-soft);
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(
+    135deg,
+    var(--forest-light-green) 0%,
+    var(--forest-accent-green) 100%
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px var(--shadow-soft);
+}
+
+.submit-btn:disabled {
+  background: var(--forest-sage);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.forgot-password {
+  color: var(--forest-medium-green);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: var(--forest-accent-green);
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 24px;
+  }
+
+  .login-header h1 {
+    font-size: 24px;
+  }
+
+  .form-input {
+    padding: 12px 14px;
+  }
+
+  .submit-btn {
+    padding: 14px;
+  }
+}
+
+/* Animation for form validation */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.form-input.error {
+  animation: shake 0.3s ease-in-out;
+}

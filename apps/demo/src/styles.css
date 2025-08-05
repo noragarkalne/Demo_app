@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Global Reset and Forest Theme Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto',
+    sans-serif;
+  line-height: 1.6;
+  color: #1a3b1a;
+  background-color: #f5f8f5;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #6faf6f;
+  outline-offset: 2px;
+}

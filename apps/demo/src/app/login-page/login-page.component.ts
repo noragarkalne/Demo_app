@@ -27,7 +27,8 @@ export class LoginPageComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Login form submitted:', this.loginForm.value);
+      const { password, ...safeValues } = this.loginForm.value;
+      console.log('Login form submitted:', safeValues);
       // Handle login logic here
     } else {
       console.log('Form is invalid');
